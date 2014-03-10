@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -15,7 +15,22 @@
   <body>
     <div id="main">
       <h1>chatterbox</h1>
+        <div class="left">
+          <button class="refresh">Refresh Messages</button><br />
+          <button class="send">Send Message</button>
+          <input class="userMessage" placeholder="Type Message Foo" /><br />
+          <button class="sendRoomName">Change Room</button>
+          <input class="roomName" placeholder="Type a room name" />
+        </div>
+        <div class="right">
+          <h5>Friends:</h5>
+        </div>
+        <div class="clear"></div>
       <!-- Your HTML goes here! -->
+      <div class="content">
+        <ul class="messages"></ul>
+      </div>
     </div>
   </body>
 </html>
+
