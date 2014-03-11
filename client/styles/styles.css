@@ -6,7 +6,7 @@ body {
 }
 
 #main {
-    width: 500px;
+    width: 700px;
     margin: auto;
     text-align: left;
     background: white;
@@ -87,13 +87,18 @@ form input[type=text] {
     padding-right: 20px;
     display: inline;
 }
+ul {
+    list-style: none outside none;
+}
+li {
+    padding-bottom: 5px;
+}
 .right{
     padding: 10px;
     border: 1px solid black ;
     display: inline;
     float: right;
     width: 220px;
-    height: 50px;
     border-radius: 10px;
 }
 .right h5 {
