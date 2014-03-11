@@ -3,6 +3,7 @@ var currentUserName = window.location.href.split('=')[1];
 
 var room = 'Default';
 var friendList = {};
+var roomList = {};
 
 var sendMessage = function(message) {
 	var message = {
@@ -51,6 +52,10 @@ var getMessages = function() {
 						$message.text(': ' + message);
 						$message.prepend($username);
 						$('ul.messages').append($message);
+            if (chatRoom && !roomList[chatRoom]) {
+              roomList[chatRoom] = true;
+              renderRooms(chatRoom);
+            }
 	        }
         }
       }
@@ -73,6 +78,13 @@ var renderLinks = function() {
 			}
 		});
 	}, 1200);
+};
+
+var renderRooms = function(currentRoom) {
+  var $room = $('<li class="room"></li>');
+  var $roomLink = $('<a class="roomLink" href="#"></a>').text(currentRoom);
+  $room.append($roomLink);
+  $('ul.rooms').append($room);
 };
 
 $(document).ready(function(){
@@ -101,6 +113,16 @@ $(document).ready(function(){
 		$('ul.messages').empty();
 		getMessages();
 	});
+
+  setTimeout(function() {
+    $('ul.rooms a').on('click', function(event) {
+      event.preventDefault();
+      room = $(this).text() || 'Default';
+      console.log(room);
+      $('ul.messages').empty();
+      getMessages();
+    });
+  }, 1200);
 
 	renderLinks();
 });

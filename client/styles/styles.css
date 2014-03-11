@@ -96,13 +96,24 @@ li {
     padding-bottom: 5px;
 }
 .right{
-    padding: 10px;
-    border: 1px solid black ;
     display: inline;
     float: right;
     width: 220px;
+}
+.right-friends, .right-rooms {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid black ;
+    height: 200px;
+    overflow: auto;
+    overflow-x: hidden;
     border-radius: 10px;
 }
+
+.right-rooms {
+    height: auto;
+}
+
 .right h5 {
     text-align: center;
     font-size: 14px;
