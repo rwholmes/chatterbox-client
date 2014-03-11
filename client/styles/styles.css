@@ -1,127 +1,37 @@
+/* ClearFix */
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+.cf:after {
+    clear:both;
+}
+
+/* Main Styles */
 body {
-    background: #eee;
-    text-align: center;
-    padding: 0 25px;
-    font-family: arial, sans-serif;
+    font-family: "Helvetica Neue",Arial,sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: #333;
 }
-
 #main {
-    width: 700px;
-    margin: auto;
-    text-align: left;
-    background: white;
-    padding: 50px 60px;
-    border: solid #ddd;
-    border-width: 0 1px 1px 1px;
-}
-
-#main h1 {
-    margin-top: 0;
-    font-size: 35px;
-    margin-bottom: 5px;
-    padding: 5px;
-}
-
-#main h1 span {
-    font-style:italic;
-}
-
-#main ul {
-    padding-left: 20px;
-}
-
-#main .error {
-    border: 1px solid red;
-    background: #FDEFF0;
-    padding: 20px;
-}
-
-#main .success {
-    margin-top: 25px;
-}
-
-#main .success code {
-    font-size: 12px;
-    color: green;
-    line-height: 13px;
-}
-
-form {
-    padding: 20px;
-    padding-left: 0;
-    margin-bottom: 20px;
-}
-
-form input[type=text] {
-    margin-right: 10px;
-    width: 70%;
-    font-size: 12px;
-    padding: 5px;
-}
-
-.chat {
-    padding: 5px;
-    margin-bottom: 5px;
-    background-color: #eee;
-}
-
-.chat .username {
-    font-weight: 800;
-}
-
-.chat:hover {
-    background-color: #ddd;
-}
-
-.spinner {
-    float: right;
-    height: 46px;
-    margin-bottom: 5px;
-}
-
-.spinner img {
-    padding: 10px;
+    width: 884px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    margin-bottom: 50px;
+    overflow: auto;
 }
 .left{
+    width:324px;
     float: left;
-    padding-right: 20px;
-    display: inline;
-    width: 400px;
-    overflow: hidden;
-}
-ul {
-    list-style: none outside none;
-}
-li {
-    padding-bottom: 5px;
 }
 .right{
-    display: inline;
+    width: 544px;
+    border: 1px solid #e8e8e8;
     float: right;
-    width: 220px;
-}
-.right-friends, .right-rooms {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid black ;
-    height: 200px;
-    overflow: auto;
-    overflow-x: hidden;
-    border-radius: 10px;
-}
-
-.right-rooms {
-    height: auto;
-}
-
-.right h5 {
-    text-align: center;
-    font-size: 14px;
-    line-height: 14px;
-    margin: 0px;
-}
-.clear {
-    clear: both;
+    border-radius: 6px;
 }
 .friend-message {
     font-weight: bold;
@@ -129,5 +39,122 @@ li {
 a:visited {
     color: blue;
 }
-
+ul {
+    margin-top: 0px;
+    list-style: none outside none;
+    padding-left: 0px;
+}
+#user-box, .user-timeline {
+    border: 1px solid #e8e8e8;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+#user-box {
+    height: 178px;
+}
+.user-timeline {
+    margin-top: 20px;
+    background-color: #fff;
+}
+.friends-list {
+    height: 170px;
+}
+.rooms-timeline {
+}
+.mini-timeline {
+    padding: 12px;
+}
+.left textarea {
+    width: 290px;
+    height: 50px;
+    margin: 12px;
+    border: 1px solid #e8e8e8;
+    color: #aaa;
+    border-radius: 4px;
+    padding: 6px;
+    font-size: 13px;
+}
+div.tweet {
+    width: 520px;
+}
+div.tweet-message {
+    float: left;
+    width: 400px;
+}
+div.tweet-time {
+    float: right;
+    width: 110px;
+    margin-left: 10px;
+    text-align: right;
+    color: #8899a6;
+}
+h3 {
+    margin: 0px;
+}
+h3.timeline-title {
+    float: left;
+}
+a.main-link {
+    float: right;
+}
+abbr {
+    font-size: 11px;
+}
+input {
+    width: 290px;
+}
+div.row {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 12px;
+}
+ul.messages li {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 9px 12px 9px 12px;
+}
+div.tweet {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 9px 12px 9px 12px;
+}
+a.button {
+    position: relative;
+    width:520px;
+    height:30px;
+    text-align:center;
+    color:#FFF;
+    text-decoration:none;
+    line-height:33px;
+    font-family:Helvetica;
+    font-size: 16px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow:-1px -1px 0 #2C7982;
+    background: #3EACBA;
+    border:1px solid #379AA4;
+    background-image:-webkit-linear-gradient(top, #48C6D4, #3EACBA);
+    background-image:-moz-linear-gradient(top, #48C6D4, #3EACBA);
+    background-image:-ms-linear-gradient(top, #48C6D4, #3EACBA);
+    background-image:-o-linear-gradient(top, #48C6D4, #3EACBA);
+    background-image:linear-gradient(top, #48C6D4, #3EACBA);
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    -webkit-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, .5);
+    -moz-box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, .5);
+    box-shadow:0 1px 0 rgba(255, 255, 255, .5) inset, 0 -1px 0 rgba(255, 255, 255, .1) inset, 0 4px 0 #338A94, 0 4px 2px rgba(0, 0, 0, .5);
+}
+a.button.small {
+    width: 300px;
+}
+a.button:hover {
+    background: #48C6D4;
+    background-image:-webkit-linear-gradient(top, #3EACBA, #48C6D4);
+    background-image:-moz-linear-gradient(top, #3EACBA, #48C6D4);
+    background-image:-ms-linear-gradient(top, #3EACBA, #48C6D4);
+    background-image:-o-linear-gradient(top, #3EACBA, #48C6D4);
+    background-image:linear-gradient(top, #3EACBA, #48C6D4);
+}
+div.button {
+    text-align: center;
+}
 

@@ -13,31 +13,47 @@
     <script src="scripts/app.js"></script>
   </head>
   <body>
-    <div id="main">
-      <h1>chatterbox</h1>
+    <div id="main" class="cf">
+      <h1 class="page-name">Chatterbox</h1>
         <div class="left">
-          <button class="refresh">Refresh Messages</button><br />
-          <button class="send">Send Message</button>
-          <input class="userMessage" placeholder="Type Message Foo" /><br />
-          <button class="sendRoomName">Create New Room</button>
-          <input class="roomName" placeholder="Type a room name" />
-          <div class="content">
-            <ul class="messages"></ul>
+          <div id="user-box">
+            <div class="row">
+              <h3>My Username</h3>
+            </div>
+            <textarea class="userMessage" placeholder="Compose New Message..."></textarea>
+            <a href="#" id="send-tweet" class="button small send">Send Message</a>
+          </div>
+          <div id="user-timeline" class="user-timeline friends-list">
+            <div class="row">
+              <h3>Friends</h3>
+            </div>
+            <div class="mini-timeline">
+              <ul class="friends">
+              </ul>
+            </div>
+          </div>
+          <div id="user-timeline" class="user-timeline rooms-list">
+            <div class="row">
+              <h3>Chat Rooms</h3>
+            </div>
+            <div class="mini-timeline">
+              <ul class="rooms">
+              </ul>
+            </div>
           </div>
         </div>
         <div class="right">
-          <div class="right-friends">
-            <h5>Friends:</h5>
-            <ul class="friends">
-            </ul>
+          <div class="row cf">
+            <h3 class="timeline-title">Tweets</h3>
+            <!--<span><a class="main-link" href="#">Back to Main Timeline</a></span>-->
           </div>
-          <div class="right-rooms">
-            <h5>Rooms:</h5>
-            <ul class="rooms">
-            </ul>
+          <div class="row button">
+            <a href="#" id="tweet-load" class="button refresh">Load Newest Messages</a>
+          </div>
+          <div id="tweets" class="messages">
+            <ul class="messages"></ul>
           </div>
         </div>
-        <div class="clear"></div>
       <!-- Your HTML goes here! -->
     </div>
   </body>
