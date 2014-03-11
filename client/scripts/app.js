@@ -2,6 +2,7 @@
 var currentUserName = window.location.href.split('=')[1];
 
 var room = 'Default';
+var friendList = {};
 
 var sendMessage = function(message) {
 	var message = {
@@ -33,15 +34,18 @@ var getMessages = function() {
     contentType: 'application/json',
     data: 'order=-createdAt',
     success: function(data) {
-      console.log(data);
-
       for (var i = 0; i < 100; i++) {
         var username = data.results[i].username;
         var message = data.results[i].text;
         var chatRoom = data.results[i].roomname;
         if (room === 'Default' || room === chatRoom) {
 	        if (message !== undefined && username && message && username.charAt(0) !== '<' && message.charAt(0) !== '<' && message.length < 160 && username.length < 160) {
-						var $message = $('<li></li>');
+	        	if (friendList[username]) {
+							var $message = $('<li class="friend-message"></li>');
+	        	}
+	        	else {
+							var $message = $('<li></li>');
+	        	}
 						var $username = $('<a class="nameLink" href="#"></a>');
 						$username.text(username);
 						$message.text(': ' + message);
@@ -56,6 +60,19 @@ var getMessages = function() {
       console.error('chatterbox: Failed to get messages');
     }
 	});
+	renderLinks();
+};
+
+var renderLinks = function() {
+	setTimeout(function(){
+		$('.nameLink').on('click', function(event) {
+			event.preventDefault();
+			if (!friendList[this.text]) {
+				friendList[this.text] = true;
+				$('ul.friends').append('<li><a class="currentFriend" href="#">' + this.text + '</a></li>');
+			}
+		});
+	}, 1200);
 };
 
 $(document).ready(function(){
@@ -85,19 +102,7 @@ $(document).ready(function(){
 		getMessages();
 	});
 
-	setTimeout(function(){
-		$('.nameLink').on('click', function(event) {
-			event.preventDefault();
-			var friends = $('.currentFriend');
-			var friendsArr = [];
-			for (var i=0; i < friends.length; i++) {
-				friendsArr.push(friends[i].text);
-			}
-			if (friendsArr.indexOf(this.text) === -1) {
-				$('ul.friends').append('<li><a class="currentFriend" href="#">' + this.text + '</a></li>');
-			}
-		});
-	}, 1200);
+	renderLinks();
 });
 
 

@@ -86,6 +86,8 @@ form input[type=text] {
     float: left;
     padding-right: 20px;
     display: inline;
+    width: 400px;
+    overflow: hidden;
 }
 ul {
     list-style: none outside none;
@@ -110,7 +112,11 @@ li {
 .clear {
     clear: both;
 }
-
-
+.friend-message {
+    font-weight: bold;
+}
+a:visited {
+    color: blue;
+}
 
 
