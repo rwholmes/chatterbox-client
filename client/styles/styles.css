@@ -40,9 +40,9 @@ a:visited {
     color: blue;
 }
 ul {
-    margin-top: 0px;
+    margin-top: 0;
     list-style: none outside none;
-    padding-left: 0px;
+    padding-left: 0;
 }
 #user-box, .user-timeline {
     border: 1px solid #e8e8e8;
@@ -58,8 +58,6 @@ ul {
 }
 .friends-list {
     height: 170px;
-}
-.rooms-timeline {
 }
 .mini-timeline {
     padding: 12px;
@@ -81,15 +79,8 @@ div.tweet-message {
     float: left;
     width: 400px;
 }
-div.tweet-time {
-    float: right;
-    width: 110px;
-    margin-left: 10px;
-    text-align: right;
-    color: #8899a6;
-}
 h3 {
-    margin: 0px;
+    margin: 0;
 }
 h3.timeline-title {
     float: left;
